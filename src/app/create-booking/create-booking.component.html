@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Create Booking </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label> List of Trains</label>
+                        <select class="custom-select d-block form-control" id="image" name="trainno"  [(ngModel)]="booking.trainNo">
+                            <option value="">Select category</option>
+                            <option *ngFor="let trainNumber of trainNumbers" [value]="trainNumber.value" >{{ trainNumber.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label> Reservation Category</label>
+                        <select class="custom-select d-block form-control" id="image" name="category" [(ngModel)]="booking.category">
+                            <option value="">Select category</option>
+                            <option *ngFor="let category of trainCategories" [value]="category.value" >{{ category.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Departure</label>
+                        <input type="text" class="form-control" id="emailId" name="departure" [(ngModel)]="booking.departure"
+                            >
+                    </div>
+                    <div class="form-group">
+                        <label>Arrival</label>
+                        <input type="text" class="form-control" id="emailId" name="arrival" [(ngModel)]="booking.arrival"
+                            >
+                    </div>
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
